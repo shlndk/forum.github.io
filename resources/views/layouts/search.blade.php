@@ -3,6 +3,9 @@
 
 
 @section('title', 'Search post')
+<?php
+
+?>
 
 @section('content')
     @include('layouts.other.nav')
@@ -17,16 +20,14 @@
         </form>
         <ul class="list-group">
             @foreach($posts as $post)
-
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     <a href="{{ route('showPost', $post) }}" class="text-decoration-none">{{ $post->title }}</a>
                     <span class="text-muted">{{ $post->created_at->format('d.m.Y H:i') }}</span>
                 </li>
             @endforeach
-
-            @if($posts->isEmpty())
-                <p class="text-muted">Nothing found</p>
-            @endif
         </ul>
+        @if($posts->count() == 0)
+            <p class="text-muted">Nothing found</p>
+        @endif
     </div>
 @endsection

@@ -25,5 +25,4 @@ Route::middleware('auth')->group(function(){
     Route::get('/comments/{post}', [CommentsController::class, 'showComment'])->name('showComment');
     Route::delete('/delete-comment/{comment}', [CommentsController::class, 'deleteComment'])->name('deleteComment');
     Route::post('delete-post/{post}', [CommentsController::class, 'destroyComment'])->name('destroyComment');
-    Route::get('/comments', [CommentsController::class, 'getComments'])->name('getComments');
 });

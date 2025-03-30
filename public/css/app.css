@@ -11,9 +11,4 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
-.nav-item.dropdown:hover .dropdown-menu {
-    display: block;
-}
-.dropdown-menu {
-    transform: translateX(-50px);
-}
+

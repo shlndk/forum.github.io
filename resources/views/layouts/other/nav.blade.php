@@ -1,7 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">Forum</a>
-        <a class="navbar-brand text-decoration-none" href="{{route('searchForm')}}">Search</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -15,6 +14,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{route('createPostForm')}}">Create Post</a></li>
+                            <li><a class="dropdown-item" href="{{route('searchForm')}}">Search</a></li>
                             <li><a class="dropdown-item" href="{{route('showFav')}}">My favorites</a></li>
                             <li><a class="dropdown-item" href="{{route('getComments')}}">My comments</a></li>
                             <li>
@@ -35,7 +35,6 @@
                             🙋‍♂️
                         </a>
                         <ul class="dropdown-menu">
-
                             <li><a class="dropdown-item" href="{{route('login')}}">Log in</a></li>
                             <li><a class="dropdown-item" href="{{route('register')}}">Register</a></li>
                         </ul>

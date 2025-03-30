@@ -12,7 +12,6 @@
             {{ session('error') }}
         </div>
     @endif
-
     <div class="container mt-5">
         <div class="card shadow-lg p-4">
             <div class="card-body">
@@ -24,29 +23,31 @@
                     <form action="{{ route('addFav', $post) }}" method="POST">
                         @csrf
                         <button type="submit" class="btn btn-outline-secondary me-2">
-                            <i class="bi bi-heart"></i> Add to favorites
+                            <i class="bi bi-heart"></i> Добавить в избранное
                         </button>
                     </form>
                     @auth
                         <a href="{{ route('showComment', $post) }}">
                             <button type="submit" class="btn btn-outline-secondary me-2">
-                                <i class="bi bi-chat"></i> Comment
+                                <i class="bi bi-chat"></i> Прокомментировать
                             </button>
                         </a>
                     @endauth
+
+
                     <a href="javascript:history.back();" class="btn btn-outline-secondary">
-                        <i class="bi bi-arrow-left"></i> Back to search
+                        <i class="bi bi-arrow-left"></i> Назад к поиску
                     </a>
                 </div>
                 @guest
                     <div>
-                        To comment on a post, you need to <a href="{{route('login')}}"
-                                                             class="fw-bold text-decoration-none ">login</a>.
+                        Чтобы прокоментировать пост, вам нужно <a href="{{route('login')}}"
+                                                                  class="fw-bold text-decoration-none ">авторизоваться</a>.
                     </div>
                 @endguest
             </div>
 
-            <h5>Comments ({{ $post->comments->count() }})</h5>
+            <h5>Комментарии ({{ $post->comments->count() }})</h5>
 
             @foreach($post->comments as $comment)
                 <div class="card mb-2">
@@ -56,7 +57,7 @@
                         <form action="{{ route('destroyComment', $comment->id) }}" method="POST">
                             @csrf
                             <button type="submit" class="btn btn-danger btn-sm">
-                                Delete
+                                Удалить
                             </button>
                             <small class="text-muted">{{ $comment->created_at->diffForHumans() }}</small>
                         </form>
